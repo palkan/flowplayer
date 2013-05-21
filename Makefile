@@ -12,7 +12,7 @@ SET_DATE=sed "s/@DATE/${DATE}/"
 
 # paths
 DIST=dist
-JS=$(DIST)/flowplayer.js
+JS=$(DIST)/rskin/flowplayer.js
 SKIN=$(DIST)/skin
 
 CDN=releases.flowplayer.org
