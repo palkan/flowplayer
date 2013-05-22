@@ -435,6 +435,11 @@
   top: -10px;
   right: -15px;
 }
+
+.flowplayer.is-mouseover.is-touch .fp-time-tooltip {
+    display:none;
+}
+
 .flowplayer .fp-time-tooltip {
   background: #484848;
   bottom: 100%;
@@ -442,7 +447,7 @@
   font-size: 10px;
   left: 0;
   line-height: 12px;
-  margin: 0 0 7px;
+  margin: 0 0 7px -17px;
   padding: 3px 6px 2px;
   position: absolute;
 }
@@ -665,32 +670,32 @@
 .flowplayer.is-ready.is-muted .fp-mute {
   background-position: -2px -80px;
 }
-.flowplayer.is-mouseout .fp-controls {
+.flowplayer.is-mouseout.is-playing .fp-controls {
   height: 0;
   -webkit-transition: height 0.15s 0.3s;
   -moz-transition: height 0.15s 0.3s;
   transition: height 0.15s 0.3s;
 }
-.flowplayer.is-mouseout .fp-timeline {
+.flowplayer.is-mouseout.is-playing .fp-timeline {
   -webkit-transition: height 0.15s 0.3s, top 0.15s 0.3s;
   -moz-transition: height 0.15s 0.3s, top 0.15s 0.3s;
   transition: height 0.15s 0.3s, top 0.15s 0.3s;
   top: -3px;
   height: 1px;
 }
-.flowplayer.is-mouseout .fp-fullscreen,
-.flowplayer.is-mouseout .fp-unload,
-.flowplayer.is-mouseout .fp-elapsed,
-.flowplayer.is-mouseout .fp-remaining,
-.flowplayer.is-mouseout .fp-duration,
-.flowplayer.is-mouseout .fp-embed,
-.flowplayer.is-mouseout .fp-volume,
-.flowplayer.is-mouseout .fp-play,
+.flowplayer.is-mouseout.is-playing .fp-fullscreen,
+.flowplayer.is-mouseout.is-playing .fp-unload,
+.flowplayer.is-mouseout.is-playing .fp-elapsed,
+.flowplayer.is-mouseout.is-playing .fp-remaining,
+.flowplayer.is-mouseout.is-playing .fp-duration,
+.flowplayer.is-mouseout.is-playing .fp-embed,
+.flowplayer.is-mouseout.is-playing .fp-volume,
+.flowplayer.is-mouseout.is-playing .fp-play,
 
-.flowplayer.is-mouseout .fp-like,
-.flowplayer.is-mouseout .fp-select,
-.flowplayer.is-mouseout .fp-rs-logo,
-.flowplayer.is-mouseout .fp-divider {
+.flowplayer.is-mouseout.is-playing .fp-like,
+.flowplayer.is-mouseout.is-playing .fp-select,
+.flowplayer.is-mouseout.is-playing .fp-rs-logo,
+.flowplayer.is-mouseout.is-playing .fp-divider {
   opacity: 0;
   border-color: transparent;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
@@ -698,28 +703,38 @@
   -moz-transition: opacity 0.15s 0.3s, border-color 0.3s 0s;
   transition: opacity 0.15s 0.3s, border-color 0.3s 0s;
 }
-.flowplayer.is-mouseover .fp-controls,
-.flowplayer.fixed-controls .fp-controls {
+.flowplayer.is-mouseover.is-playing .fp-controls,
+.flowplayer.fixed-controls .fp-controls,
+.flowplayer.is-paused .fp-controls{
   height: 27px;
 }
-.flowplayer.is-mouseover .fp-fullscreen,
+.flowplayer.is-mouseover.is-playing .fp-fullscreen,
 .flowplayer.fixed-controls .fp-fullscreen,
-.flowplayer.is-mouseover .fp-unload,
+.flowplayer.is-paused .fp-fullscreen
+.flowplayer.is-mouseover.is-playing .fp-unload,
 .flowplayer.fixed-controls .fp-unload,
-.flowplayer.is-mouseover .fp-elapsed,
+.flowplayer.is-paused .fp-unload,
+.flowplayer.is-mouseover.is-playing .fp-elapsed,
 .flowplayer.fixed-controls .fp-elapsed,
-.flowplayer.is-mouseover .fp-remaining,
+.flowplayer.is-paused .fp-elapsed,
+.flowplayer.is-mouseover.is-playing .fp-remaining,
 .flowplayer.fixed-controls .fp-remaining,
-.flowplayer.is-mouseover .fp-duration,
+.flowplayer.is-paused .fp-remaining,
+.flowplayer.is-mouseover.is-playing .fp-duration,
 .flowplayer.fixed-controls .fp-duration,
-.flowplayer.is-mouseover .fp-embed,
+.flowplayer.is-paused .fp-duration,
+.flowplayer.is-mouseover.is-playing .fp-embed,
 .flowplayer.fixed-controls .fp-embed,
-.flowplayer.is-mouseover .fp-logo,
+.flowplayer.is-paused .fp-embed,
+.flowplayer.is-mouseover.is-playing .fp-logo,
 .flowplayer.fixed-controls .fp-logo,
-.flowplayer.is-mouseover .fp-volume,
+.flowplayer.is-paused .fp-logo,
+.flowplayer.is-mouseover.is-playing .fp-volume,
 .flowplayer.fixed-controls .fp-volume,
-.flowplayer.is-mouseover .fp-play,
-.flowplayer.fixed-controls .fp-play {
+.flowplayer.is-paused .fp-volume,
+.flowplayer.is-mouseover.is-playing .fp-play,
+.flowplayer.fixed-controls .fp-play,
+.flowplayer.is-paused .fp-play{
   opacity: 1;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
 }
@@ -743,6 +758,15 @@
 .flowplayer.is-disabled .fp-progress {
   background-color: #999;
 }
+
+.flowplayer.no-embed .fp-rs-button-embed, .flowplayer.no-embed .fp-rs-embed-code{
+    display:none;
+}
+
+.flowplayer.no-related .fp-rs-button-similar, .flowplayer.no-related .fp-rs-similar{
+    display:none;
+}
+
 .flowplayer .fp-embed {
   position: absolute;
   top: 5px;
@@ -1073,7 +1097,7 @@
  * Top
  */
 
-.flowplayer .fp-rs-top {
+.flowplayer .fp-rs-top{
   display: none;
   overflow: hidden;
   padding: 5px 0;
@@ -1096,14 +1120,14 @@
   bottom: 38px;
   top: 0;
 }
-.flowplayer.is-mouseout .fp-rs-top-bg-b-t {
+.flowplayer.is-mouseout.is-playing .fp-rs-top-bg-b-t {
   bottom: 3px;
   -webkit-transition: bottom 0.15s 0.3s;
   -moz-transition: bottom 0.15s 0.3s;
   transition: bottom 0.15s 0.3s;
 }
 
-/* Status */
+/* Status  */
 .is-paused.flowplayer .fp-rs-top {
   display: block;
 }
