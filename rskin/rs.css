@@ -400,7 +400,7 @@
   -moz-transition: right 0.1s linear, border 0.1s linear, top 0.1s linear, left 0.1s linear;
   transition: right 0.1s linear, border 0.1s linear, top 0.1s linear, left 0.1s linear;
 }
-.flowplayer.is-touch.is-mouseover .fp-progress:after,
+/*.flowplayer.is-touch.is-mouseover .fp-progress:after,
 .flowplayer.is-touch.is-mouseover .fp-progress:before {
   content: '';
   display: block;
@@ -414,7 +414,7 @@
   width: 10px;
   height: 10px;
 }
-/*.flowplayer.is-touch.is-mouseover .fp-progress:after {
+.flowplayer.is-touch.is-mouseover .fp-progress:after {
   height: 10px;
   width: 10px;
   top: -5px;
