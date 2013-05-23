@@ -71,7 +71,6 @@ public class Flowplayer extends Sprite {
       private var conn:NetConnection;
       private var stream:NetStream;
       private var video:Video;
-      private var logo:Logo;
 
       private var timer:Timer;
 
@@ -225,8 +224,6 @@ public class Flowplayer extends Sprite {
          video = new Video();
          video.smoothing = true;
          this.addChild(video);
-         logo = new Logo();
-         addChild(logo);
          arrange();
 
          conf.url = unescape(conf.url);
@@ -443,8 +440,6 @@ public class Flowplayer extends Sprite {
     }
 
       private function arrange(e:Event = null):void {
-         logo.x = 12;
-         logo.y = stage.stageHeight - 50;
          video.width = stage.stageWidth;
          video.height = stage.stageHeight;
       };
